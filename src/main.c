@@ -17,12 +17,12 @@ typedef enum {
 /* Attribute for each knight */
 typedef struct _knight{
 	unsigned int xp;
-	int sta;
+	unsigned int sta;
 	Place_t place;
 }Knight_t;
 
 /* Number of knights */
-#define NUM_OF_KNIGHTS			(12) // email 1
+#define NUM_OF_KNIGHTS			(12) // email 1: changed num of knights from 6 to 12
 #define NUM_OF_HOURS			(24)
 
 int main()
@@ -42,8 +42,15 @@ int main()
 			}
 			else
 			{
-				knight[knight_id].sta -= 1;
-				knight[knight_id].xp += 1;
+				/*
+				 * email 2: knight should not earn xp for that hour when stamina is 0
+				 * & ideally stamina should not go below zero
+				 */
+				if(knight[knight_id].sta > 0)
+				{
+					knight[knight_id].sta -= 1;
+					knight[knight_id].xp += 1;
+				}
 			}
 		}
 	}
