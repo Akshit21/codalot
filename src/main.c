@@ -22,7 +22,7 @@ typedef struct _knight{
 }Knight_t;
 
 /* Number of knights */
-#define NUM_OF_KNIGHTS			(6)
+#define NUM_OF_KNIGHTS			(12) // email 1
 #define NUM_OF_HOURS			(24)
 
 int main()
